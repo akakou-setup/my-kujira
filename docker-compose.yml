@@ -1,0 +1,9 @@
+my-kujira:
+  build: "."
+  volumes:
+    - ./volume:/home/root
+  tty: true
+  cap_add:
+    - SYS_PTRACE
+  security_opt:
+    - seccomp:unconfined
