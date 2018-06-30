@@ -1,7 +1,7 @@
 my-kujira:
   build: "."
   volumes:
-    - ./volume:/home/root
+    - ./volume:/root
   tty: true
   cap_add:
     - SYS_PTRACE

@@ -1,0 +1,28 @@
+#!/usr/bin/python
+
+import sys, os
+import subprocess
+
+
+# set variable
+VOLUME = 'volume'
+FOLDER = 'my-kujira'
+KUJIRA_PATH = os.path.expanduser('~') + '/' + FOLDER
+START_UP = 'sudo docker-compose run my-kujira xonsh'
+
+if len(sys.argv) > 1:
+    # copy or move file
+    if sys.argv[1]  == '-m' and len(sys.argv) > 2:
+        file_index = 2
+        cmd = 'sudo mv {0} {1}/{2}'
+    else:
+        file_index = 1
+        cmd = 'sudo cp -r {0} {1}/{2}'
+
+    cmd = cmd.format(sys.argv[file_index], KUJIRA_PATH, VOLUME)
+    os.system(cmd)
+
+# run kujira
+os.chdir(KUJIRA_PATH)
+os.system(START_UP)
+
