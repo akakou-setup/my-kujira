@@ -22,9 +22,9 @@ os.system(cmd)
 # get shell's rc file name
 shell = os.environ['SHELL']
 shell = shell.split('/')[-1]
-if shell == '/bin/zsh':
+if shell == 'zsh':
     shellrc_path = HOME + '/.zshrc'
-elif shell == '/bin/bash':
+elif shell == 'bash':
     shellrc_path = HOME + '/.bashrc'
 else:
     sys.stderr.write('shell not supported => {}'.format(shell))

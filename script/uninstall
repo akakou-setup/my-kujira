@@ -28,7 +28,7 @@ shell = os.environ['SHELL']
 shell = shell.split('/')[-1]
 if shell == 'zsh':
     shellrc_path = HOME + '/.zshrc'
-elif shell == '/bin/bash':
+elif shell == 'bash':
     shellrc_path = HOME + '/.bashrc'
 else:
     sys.stderr.write('shell not supported => {}'.format(shell))
