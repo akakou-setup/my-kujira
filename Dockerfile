@@ -12,4 +12,4 @@ RUN sh vim.sh
 # shell
 RUN rm $HOME/.zsh*
 # workdir 
-WORKDIR /home/root
+WORKDIR /root/volume
